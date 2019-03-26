@@ -1,6 +1,9 @@
 class Question
-    def initialize
+    attr_accessor :question
+    attr_accessor :correct_answer
+    def initialize(question, correct_answer)
         @question = question
-        @answer = answer
+        @correct_ans = correct_answer
     end
+
 end
