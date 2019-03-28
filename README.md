@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The Quiz Master was attemped as an extension following from building a rudimentary banking application. I intend to clarify my understanding of object method calls, inheritance and best practices for structuring and approaching an application. 
+The Quiz Master was attemped as an extension following from building a rudimentary banking application. I intend to clarify my understanding of object method calls, inheritance, MVC approach for structuring and resolving an application/problem. 
 
 ## MVP Features
 * User can choose an Easy or Hard version of a quiz

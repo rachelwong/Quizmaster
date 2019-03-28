@@ -5,5 +5,4 @@ class Question
         @question = question
         @correct_ans = correct_answer
     end
-
 end

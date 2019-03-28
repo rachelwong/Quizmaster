@@ -1,4 +1,4 @@
-require_relative 'Question.rb'
+require_relative 'Question'
 
 class Quiz
     attr_reader :Questions
@@ -6,10 +6,9 @@ class Quiz
         @Questions = []
         # add questions to the Questions instance variable array
     end
-
 end
 
-class Quiz > HardQuiz
+class HardQuiz < Quiz 
     def get_question()
         # Set Questions
         qh1 = "HQ: What is the capital of Australia? /n
@@ -24,11 +23,11 @@ class Quiz > HardQuiz
         | A: Find Dave | B: 42 | C: Work before Life | D: Get Rich | "
 
         # Create a Questions array object with an array of new Question objects initiated each with question and answer 
-        @Questions = [Question.new(q1, "b"), Question.new(q2, "a"), Question.new(q3, "c"), Question.new(q4, "a"), Question.new(q5, "b")]
+        @Questions = [Question.new(qh1, "b"), Question.new(qh2, "a"), Question.new(qh3, "c"), Question.new(qh4, "a"), Question.new(qh5, "b")]
     end
 end
 
-class Quiz > EasyQuiz
+class EasyQuiz < Quiz
     def get_question()
         # Set Questions
         eq1 = "EQ: How many alphabets in the English language? /n
@@ -43,6 +42,6 @@ class Quiz > EasyQuiz
         | A: New Zealand | B: Queensland | C: Tasmania | D: ACT | "
         
         # Create a Questions array object with an array of new Question objects initiated each with question and answer 
-        @Questions = [Question.new(q1, "c"), Question.new(q2, "d"), Question.new(q3, "b"), Question.new(q4, "b"), Question.new(q5, "a")]
+        @Questions = [Question.new(eq1, "c"), Question.new(eq2, "d"), Question.new(eq3, "b"), Question.new(eq4, "b"), Question.new(eq5, "a")]
     end        
 end
