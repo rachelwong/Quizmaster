@@ -1,13 +1,13 @@
 class Screen
     def welcome
         puts
-        puts " ****************** ??? *******************"
+        puts " *>>****************>>* ??? *<<*************<<*"
         puts
-        puts "      = WELCOME TO TRIVIA PURSUIT ="
-        puts "   Would you like to play the game at "
-        puts " | {E}ASY LEVEL | {H}ARD LEVEL | or {Q}UIT | "
+        puts "         = WELCOME to TRIVIA PURSUIT ="
+        puts "      Would you like to play the game at "
+        puts "  | {E}ASY LEVEL | {H}ARD LEVEL | or {Q}UIT | "
         puts
-        puts " ****************** ??? *******************"
+        puts " *>>****************>>* ??? *<<*************<<*"
     end
 
     def confirm_level(level_choice)
@@ -31,8 +31,15 @@ class Screen
     def invalid
         puts " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
         puts "        INVALID INPUT"
-        puts "   CHOOSE A, B, C, D or Q ONLY"
         puts " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    end
+
+    def scoreboard(result)
+        puts
+        puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        puts "You have scored #{result} out of 5."
+        puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        puts
     end
 
     def goodbye

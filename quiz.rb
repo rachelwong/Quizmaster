@@ -2,14 +2,13 @@ require_relative 'Question'
 
 class Quiz
     attr_reader :Questions
-    def initialize
-        @Questions = []
-        # add questions to the Questions instance variable array
+    def initialize 
+        @Question_list = []
     end
 end
 
 class HardQuiz < Quiz 
-    def get_question()
+    def get_questions()
         # Set Questions
         qh1 = "HQ: What is the capital of Australia? /n
         | A: Hong Kong | B: Sydney | C: Brisbane | D: Canberra |"
@@ -23,12 +22,17 @@ class HardQuiz < Quiz
         | A: Find Dave | B: 42 | C: Work before Life | D: Get Rich | "
 
         # Create a Questions array object with an array of new Question objects initiated each with question and answer 
-        @Questions = [Question.new(qh1, "b"), Question.new(qh2, "a"), Question.new(qh3, "c"), Question.new(qh4, "a"), Question.new(qh5, "b")]
+        @Question_list = [
+            Question.new(qh1, "b"), 
+            Question.new(qh2, "a"), 
+            Question.new(qh3, "c"), 
+            Question.new(qh4, "a"), 
+            Question.new(qh5, "b")]
     end
 end
 
 class EasyQuiz < Quiz
-    def get_question()
+    def get_questions()
         # Set Questions
         eq1 = "EQ: How many alphabets in the English language? /n
         | A: More than 10 | B: 62 | C: 26 | D: 20 |"
@@ -41,7 +45,12 @@ class EasyQuiz < Quiz
         eq5 = "EQ: Which of the below is not a state or territory of Australia? /n
         | A: New Zealand | B: Queensland | C: Tasmania | D: ACT | "
         
-        # Create a Questions array object with an array of new Question objects initiated each with question and answer 
-        @Questions = [Question.new(eq1, "c"), Question.new(eq2, "d"), Question.new(eq3, "b"), Question.new(eq4, "b"), Question.new(eq5, "a")]
+        # Create a Questions array object with an array of new Question objects initiated each with question and correct answer 
+        @Question_list = [
+            Question.new(eq1, "c"), 
+            Question.new(eq2, "d"), 
+            Question.new(eq3, "b"), 
+            Question.new(eq4, "b"), 
+            Question.new(eq5, "a")]
     end        
 end

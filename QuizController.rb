@@ -13,7 +13,7 @@ class QuizController
         @screen.welcome # Welcome Screen
         level_choice = @get.user_choice # Get User Input      
         while level_choice != "Q"
-            case level_choice 
+            case level_choice
                 when "E"
                     level_choice = "Easy"
                     @screen.confirm_level(level_choice)
@@ -23,8 +23,9 @@ class QuizController
                     @screen.confirm_level(level_choice)
                     go_hardQuiz()
                 else
-                    @screen.goodbye
-                end
+                    @screen.invalid
+            end
+                @screen.goodbye
         end
     end
 
