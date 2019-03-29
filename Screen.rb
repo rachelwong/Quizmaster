@@ -47,4 +47,16 @@ class Screen
         puts "                 GOOD BYE!"
         puts " ****************** ??? *******************"
     end
+
+    def victory
+        puts "*********** ??? ************"
+        puts "        YOU WON :-D"
+        puts "*********** ??? ************"
+    end
+    
+    def loss
+        puts "*********** ??? ************"
+        puts "       YOU LOST :-("
+        puts "*********** ??? ************"
+    end
 end

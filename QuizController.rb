@@ -14,7 +14,7 @@ class QuizController
     def run
         @screen.welcome # Welcome Screen
         level_choice = @get.user_choice # Get User Input      
-        while level_choice != "Q"
+        while level_choice != "Q" && @score < 50
             case level_choice
                 # When easy level is chosen
                 when "E"
@@ -30,47 +30,40 @@ class QuizController
                     # invalid input
                     @screen.invalid
             end
-                # Exit screen
-                @screen.goodbye
         end
+        # Exit screen
+        @screen.goodbye
     end
 
     def run_hardQuiz
+        # while score is not 50/50 or end of the questions list, loop do
         # for every question in the Questions_list object of @hardquiz
-        for question in @hardQuiz.get_questions do
-            puts question.query # print the question
-            answer = @get.user_choice # ask the user for the answer
-
-            # if the answer matches correct answer
-            if answer == question.correct_ans
-                @score += 10 # increment score by 10 
-                @screen.correct(answer) # display correct message
-                @screen.scoreboard(@score) # display score
-                gets.chomp # wait for user to press enter
-            else
-                @screen.wrong(answer) #display wrong message
-                @screen.scoreboard(@score) #display score
-                gets.chomp # wait for user to press enter
+            for question in @hardQuiz.get_questions do
+                checkQuiz(question)
             end
-        end
     end
 
     def run_easyQuiz
+        # while score is not 50/50 or end of the questions list, loop do
         # for every question in the Questions_list object of @easyquiz
         for question in @easyQuiz.get_questions do
-             puts question.query # display the question
-             answer = @get.user_choice # get user input
-             # if the input matches the correct answer
-             if answer == question.correct_ans
+            checkQuiz(question)
+        end
+    end
+
+    def checkQuiz(one_question)
+            puts one_question.query # display the question
+            answer = @get.user_choice # get user input
+            # if the input matches the correct answer
+            if answer == one_question.correct_ans
                 @score += 10 # increment score by 10
                 @screen.correct(answer) # display correct message
                 @screen.scoreboard(@score) # display score
                 gets.chomp # wait for user to press enter
-             else
+            else
                 @screen.wrong(answer) # display wrong message
                 @screen.scoreboard(@score) # display score
                 gets.chomp # wait for user to press enter
-             end
-        end
+            end
     end
 end
