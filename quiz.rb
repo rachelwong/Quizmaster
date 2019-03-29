@@ -30,7 +30,7 @@ class HardQuiz < Quiz
             Question.new(qh5, "B")]
     end
 end
-
+# 
 class EasyQuiz < Quiz
     def get_questions()
         # Set Questions
