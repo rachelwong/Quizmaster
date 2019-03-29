@@ -1,6 +1,7 @@
 require_relative 'GetInput'
 require_relative 'Screen'
 require_relative 'Quiz'
+
 class QuizController
     def initialize
         @screen = Screen.new
@@ -30,10 +31,11 @@ class QuizController
         end
     end
 
-    def go_hardQuiz
-        for @hardQuiz do |question|
+    def run_hardQuiz
+        # for every question in the Questions_list object of @hardquiz
+        for question in @hardQuiz do
             puts question.query
-            answer = gets.chomp.upcase
+            answer = @get.user_choice
 
             if answer == question.correct_ans
                 @score += 10
@@ -45,13 +47,17 @@ class QuizController
                 @screen.scoreboard(@score)
                 gets.chomp
             end
+        end
     end
 
-    def go_easyQuiz
-        for @easyQuiz do |question|
+    def run_easyQuiz
+        # for every question in the Questions_list object of @easyquiz
+        for question in @easyQuiz do
+            # display the question
              puts question.query
-             answer = gets.chomp.upcase
-             
+             # get user'
+             answer = @get.user_choice
+             # if it is the correct answer
              if answer == question.correct_ans
                 @score += 10
                 @screen.correct(answer)
@@ -62,6 +68,7 @@ class QuizController
                 @screen.scoreboard(@score)
                 gets.chomp
              end
+        end
     end
 
 end
