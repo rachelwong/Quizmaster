@@ -37,7 +37,7 @@ class Screen
     def scoreboard(result)
         puts
         puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-        puts "You have scored #{result} out of 5."
+        puts "You have scored #{result} out of 50."
         puts "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
         puts
     end
