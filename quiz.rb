@@ -23,11 +23,11 @@ class HardQuiz < Quiz
 
         # Create a Questions array object with an array of new Question objects initiated each with question and answer 
         @Questions_list = [
-            Question.new(qh1, "b"), 
-            Question.new(qh2, "a"), 
-            Question.new(qh3, "c"), 
-            Question.new(qh4, "a"), 
-            Question.new(qh5, "b")]
+            Question.new(qh1, "B"), 
+            Question.new(qh2, "A"), 
+            Question.new(qh3, "C"), 
+            Question.new(qh4, "A"), 
+            Question.new(qh5, "B")]
     end
 end
 
@@ -47,10 +47,10 @@ class EasyQuiz < Quiz
         
         # Create a Questions array object with an array of new Question objects initiated each with question and correct answer 
         @Questions_list = [
-            Question.new(eq1, "c"), 
-            Question.new(eq2, "d"), 
-            Question.new(eq3, "b"), 
-            Question.new(eq4, "b"), 
-            Question.new(eq5, "a")]
+            Question.new(eq1, "C"), 
+            Question.new(eq2, "D"), 
+            Question.new(eq3, "B"), 
+            Question.new(eq4, "B"), 
+            Question.new(eq5, "A")]
     end        
 end

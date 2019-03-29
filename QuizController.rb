@@ -33,7 +33,7 @@ class QuizController
 
     def run_hardQuiz
         # for every question in the Questions_list object of @hardquiz
-        for question in @hardQuiz do
+        for question in @hardQuiz.get_questions do
             puts question.query
             answer = @get.user_choice
 
@@ -52,7 +52,7 @@ class QuizController
 
     def run_easyQuiz
         # for every question in the Questions_list object of @easyquiz
-        for question in @easyQuiz do
+        for question in @easyQuiz.get_questions do
             # display the question
              puts question.query
              # get user'

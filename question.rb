@@ -1,6 +1,6 @@
 class Question
     attr_accessor :query
-    attr_accessor :correct_answer
+    attr_accessor :correct_ans
 
     def initialize(query, correct_answer)
         @query = query
