@@ -2,11 +2,14 @@ require_relative 'Question'
 
 class Quiz
     attr_reader :Questions_list
+
+    # Create a Quiz object called Questions_list
     def initialize 
         @Questions_list = []
     end
 end
 
+# Create a Hard-level of the Quiz object
 class HardQuiz < Quiz 
     def get_questions()
         # Set Questions
@@ -30,7 +33,8 @@ class HardQuiz < Quiz
             Question.new(qh5, "B")]
     end
 end
-# 
+
+# Create an Easy version of the Quiz object  
 class EasyQuiz < Quiz
     def get_questions()
         # Set Questions

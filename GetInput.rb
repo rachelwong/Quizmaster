@@ -16,6 +16,6 @@ class GetInput
         else
             @screen.invalid # output error screen
         end
-        @screen.goodbye
+        @screen.goodbye # goodbye screen
     end
 end
