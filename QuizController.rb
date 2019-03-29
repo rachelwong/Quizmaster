@@ -5,8 +5,9 @@ class QuizController
     def initialize
         @screen = Screen.new
         @get = GetInput.new 
-        @hardquiz = HardQuiz.new
-        @easyquiz = EasyQuiz.new
+        @hardQuiz = HardQuiz.new
+        @easyQuiz = EasyQuiz.new
+        @score = 0
     end
 
     def run
@@ -17,11 +18,11 @@ class QuizController
                 when "E"
                     level_choice = "Easy"
                     @screen.confirm_level(level_choice)
-                    go_easyQuiz()
+                    run_easyQuiz()
                 when "H"
                     level_choice = "Hard"
                     @screen.confirm_level(level_choice)
-                    go_hardQuiz()
+                    run_hardQuiz()
                 else
                     @screen.invalid
             end
@@ -30,12 +31,37 @@ class QuizController
     end
 
     def go_hardQuiz
-        @hardquiz.get_questions
+        for @hardQuiz do |question|
+            puts question.query
+            answer = gets.chomp.upcase
+
+            if answer == question.correct_ans
+                @score += 10
+                @screen.correct(answer)
+                @screen.scoreboard(@score)
+                gets.chomp
+            else
+                @screen.wrong(answer)
+                @screen.scoreboard(@score)
+                gets.chomp
+            end
     end
 
     def go_easyQuiz
-        @easyquiz.get_questions
-        
+        for @easyQuiz do |question|
+             puts question.query
+             answer = gets.chomp.upcase
+             
+             if answer == question.correct_ans
+                @score += 10
+                @screen.correct(answer)
+                @screen.scoreboard(@score)
+                gets.chomp
+             else
+                @screen.wrong(answer)
+                @screen.scoreboard(@score)
+                gets.chomp
+             end
     end
 
 end

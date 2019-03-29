@@ -1,5 +1,5 @@
 class Question
-    attr_accessor :question
+    attr_accessor :query
     attr_accessor :correct_answer
 
     def initialize(query, correct_answer)

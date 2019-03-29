@@ -1,9 +1,9 @@
 require_relative 'Question'
 
 class Quiz
-    attr_reader :Questions
+    attr_reader :Questions_list
     def initialize 
-        @Question_list = []
+        @Questions_list = []
     end
 end
 
@@ -22,7 +22,7 @@ class HardQuiz < Quiz
         | A: Find Dave | B: 42 | C: Work before Life | D: Get Rich | "
 
         # Create a Questions array object with an array of new Question objects initiated each with question and answer 
-        @Question_list = [
+        @Questions_list = [
             Question.new(qh1, "b"), 
             Question.new(qh2, "a"), 
             Question.new(qh3, "c"), 
@@ -46,7 +46,7 @@ class EasyQuiz < Quiz
         | A: New Zealand | B: Queensland | C: Tasmania | D: ACT | "
         
         # Create a Questions array object with an array of new Question objects initiated each with question and correct answer 
-        @Question_list = [
+        @Questions_list = [
             Question.new(eq1, "c"), 
             Question.new(eq2, "d"), 
             Question.new(eq3, "b"), 
